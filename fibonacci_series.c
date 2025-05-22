@@ -6,7 +6,6 @@ int main() {
     int next;             // Terme suivant de la série
 
     // Demande à l'utilisateur d'entrer une valeur (même si elle est plus grande que 5)
-    printf("Entrez une valeur limite : ");
     scanf("%d", &limit);
 
     printf("Fibonacci : ");

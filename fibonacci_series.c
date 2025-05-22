@@ -1,24 +1,35 @@
-#include <stdio.h>
+#include <stdio.h>  // Inclusion de la bibliothèque standard d’entrée/sortie
 
 int main() {
-    int limite;  // Variable pour stocker la valeur limite saisie par l'utilisateur
+    int limit;           // Variable pour stocker la limite saisie par l'utilisateur
+    int a = 0, b = 1;     // Les deux premiers termes de la série de Fibonacci
+    int next;             // Terme suivant de la série
 
-    // Demande à l'utilisateur de saisir une valeur limite
-    scanf("%d", &limite);  // Lecture de la valeur entrée par l'utilisateur
+    // Demande à l'utilisateur d'entrer une valeur (même si elle est plus grande que 5)
+    printf("Entrez une valeur limite : ");
+    scanf("%d", &limit);
 
-    // Initialisation des deux premiers termes de la suite de Fibonacci
-    int a = 0;
-    int b = 1;
+    printf("Fibonacci : ");
 
-    // Tant que la valeur actuelle est inférieure ou égale à la limite, on affiche les termes
-    while (a <= limite) {
-        printf("%d ", a);  // Affichage du terme courant
+    // On affiche les termes de la série tant qu'ils sont <= 5, indépendamment de la limite entrée
 
-        // Calcul du terme suivant de la suite
-        int temp = a + b;  // temp contient la somme des deux derniers termes
-        a = b;             // Le nouveau a devient l'ancien b
-        b = temp;          // Le nouveau b devient la somme calculée
+    // Affiche le premier terme si <= 5
+    if (a <= 5) printf("%d ", a);
+
+    // Affiche le deuxième terme si <= 5
+    if (b <= 5) printf("%d ", b);
+
+    // Calcule le prochain terme
+    next = a + b;
+
+    // Continue à afficher les termes tant qu’ils sont inférieurs ou égaux à 5
+    while (next <= 5) {
+        printf("%d ", next);  // Affiche le terme
+        a = b;                // Avance dans la série
+        b = next;
+        next = a + b;         // Calcule le prochain terme
     }
 
+    printf("\n");  // Nouvelle ligne après la série
     return 0;      // Fin du programme
 }
